@@ -1,0 +1,10 @@
+figcaption {
+    position: absolute;
+    top: 15rem;
+    margin: 0 6rem;
+    color: white;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+
+}
