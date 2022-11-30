@@ -7,6 +7,25 @@ import { Input, Stack, Box, Button, ButtonGroup } from '@chakra-ui/react'
 import Header from "./Header";
 
 
+const [username, setUsername] = useState('');
+const [password, setPassword] = useState('');
+
+
+handleUsername = event => {
+    console.log(event.target.value);
+    setUsername(event.target.value);
+}
+
+handlePassword = event => {
+    console.log(event.target.value);
+    setPassword(event.target.value);
+}
+
+onSubmit = event => {
+    axios.post('http://localhost:4000/user/login', {username, password}).then(res => console.log(res));
+    // add in postman json object to check if it's working
+}
+
 
 function Login(){
     return (
@@ -16,9 +35,9 @@ function Login(){
             <Box  bg='#9BCBE3' display="flex" w='500px' h='350px' justifyContent="center" alignItems="center" >
             <Stack spacing={3} w="25%" align = 'center'>
             <b >Login - Welcome back!</b>
-            <Input placeholder='Login' size='md' w='300px' bg='white' />
-            <Input placeholder='Password' size='md' w='300px' bg='white' />
-            <Button w="50%" color='#FFFFFF' bg="#216583" >Login</Button>
+            <Input placeholder='Login' size='md' w='300px' bg='white' onChange={handleUsername} />
+            <Input placeholder='Password' size='md' w='300px' bg='white' onChange={handlePassword} />
+            <Button w="50%" color='#FFFFFF' bg="#216583" onClick={onSubmit}>Login</Button>
             </Stack>
             </Box>
             </Box>
