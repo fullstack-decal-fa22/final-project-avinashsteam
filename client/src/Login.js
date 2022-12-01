@@ -8,9 +8,6 @@ import Header from "./Header";
 
 
 
-// const [username, setUsername] = useState('');
-// const [password, setPassword] = useState('');
-
 
 
 
@@ -30,7 +27,7 @@ function Login(){
     }
 
     const onSubmit = () => {
-    axios.post('http://localhost:4000/user/login', {username, password}).then(res => console.log(res));
+    axios.post('http://localhost:3000/user/login', {username, password}).then(res => console.log(res));
     // add in postman json object to check if it's working
     }
     
