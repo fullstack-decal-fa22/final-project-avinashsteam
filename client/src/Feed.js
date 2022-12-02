@@ -23,15 +23,18 @@ const Feed = () => {
   // ====================
 
   return (
-    <div style={{ maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
+    <div style={{backgroundColor: '#C8EDF7'}}>
+<div style={{ maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto'}}>
+      <NewPost newFunc = {getPostsData} />
       {
         data && data.map(d =>
           <Post title={d.title} comments={d.comments} id={d.id} key={d.id} selectedFile={d.selectedFile} />
         )
       }
 
-      <NewPost newFunc = {getPostsData} />
     </div>
+    </div>
+    
   )
 
 }

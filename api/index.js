@@ -6,8 +6,6 @@ const InitiateMongoServer = require("./config/db");
 // Initiate Mongo Server
 InitiateMongoServer();
 
-//const port = 3002
-
 // PORT
 const PORT = process.env.PORT || 3000;
 const cors = require('cors');

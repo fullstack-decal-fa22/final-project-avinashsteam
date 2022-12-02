@@ -21,16 +21,16 @@ function Sather(){
            
            <Flex color='white'>
   
-            <Square flex='1' size='150px'>
-                <img src={icon}></img>
+            <Square flex='1' size='300px'>
+                <img  src={icon}></img>
             </Square>
             
             {/* trying to implement a box inbetween*/}
-            <Square flex='1' size='30px'>
+            <Square size='50px'>
             </Square>
 
-            <Square flex='1' size='150px'>
-                <Stack spacing={3}>
+            <Square margin-top='-50px' flex='1' size='500px' >
+                <Stack margin-top='-50px' spacing={3} alignContent="">
                     <Text fontSize='3xl' color='#000000'>BearPrep</Text>
                     <Text fontSize='sm' color='#049E9F'>Streamline Collabration</Text>
                 <Text fontSize='xl' color='#000000'>Worried about how to study for exams collaboratively? Work together with your peers to solve exercises and problem sets here!</Text>

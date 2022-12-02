@@ -50,17 +50,22 @@ function Login(){
             <Header></Header>
            
             <Box  bg='#C8EDF7' w="100%" display="flex" justifyContent="center" alignItems="center" paddingTop='10%' paddingBottom='100%'>
-            <Box  bg='#9BCBE3' display="flex" w='500px' h='350px' justifyContent="center" alignItems="center" >
+            <Box  borderRadius="lg" bg='#9BCBE3' display="flex" w='500px' h='350px' justifyContent="center" alignItems="center" >
             <Stack spacing={3} w="25%" align = 'center'>
             {/* <b >Login</b>
             <Input placeholder='Login' size='md' w='300px' bg='white' />
             <Input placeholder='Password' size='md' w='300px' bg='white' />
             <Button w="50%" color='#FFFFFF' bg="#216583" >Login</Button> */}
             <Text as='b'> Login </Text>
-            <Text color={colorChange(hasSubmitted)}> Welcolme {username} </Text>
+            <Text color={colorChange(hasSubmitted)}> Welcome {username} </Text>
             <Input placeholder='Login' size='md' w='300px' bg='white' onChange={handleUsername} />
             <Input placeholder='Password' size='md' w='300px' bg='white' onChange={handlePassword} />
-            <Button w="50%" color='#FFFFFF' bg="#216583" onClick={onSubmit}>Login</Button>
+
+            <a href="http://localhost:3001/posts">
+            <Button href="http://localhost:3001/posts" w="100%" color='#FFFFFF' bg="#216583" onClick={onSubmit}>Login</Button>
+             </a>
+
+
             </Stack>
             </Box>
             </Box>

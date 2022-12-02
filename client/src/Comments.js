@@ -1,5 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
+import { Box, Button, Input, Text } from '@chakra-ui/react'
 
 const Comments = ({ postId, comments: initialComments }) => {
   const [comments, setComments] = useState(initialComments);
@@ -16,20 +17,22 @@ const Comments = ({ postId, comments: initialComments }) => {
   };
 
   return (
-    <div style={{ border: '1px solid black'}}>
-      {comments && comments.map((comment, i) => (
+  
+    <div >
+      <Box padding={"10px"} borderRadius='lg' bg='#C8EDF7' w='100%' p={4} color='white'>
+        {comments && comments.map((comment, i) => (
         <div key={i + comment}>
-        <p>
+        <Text color={'black'}>
           {comment}
-        </p>
+        </Text>
         </div>
       ))}
       <div>
-        <input value={newComment} onChange={e => setNewComment(e.target.value)}/>
+        <Input color={'black'} bg = "white" placeholder='Comment' value={newComment} onChange={e => setNewComment(e.target.value)} padding-bottom="10px"/>
       </div>
-      <button  onClick={handleSubmitComment}>
-        Submit
-      </button>
+      <Button bg='#216583' color="white" onClick={handleSubmitComment} border marginTop='10px' >Submit</Button>
+      </Box>
+      
     </div>
   )
 }

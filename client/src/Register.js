@@ -24,6 +24,7 @@ function Register(){
 
     const onSubmit = () => {
         axios.post('http://localhost:3000/user/register', {username, password}).then(res => console.log(res));
+
         // add in postman json object to check if it's working
         }
 
@@ -31,12 +32,14 @@ function Register(){
         <div>
             <Header></Header>
             <Box  bg='#C8EDF7' w="100%" display="flex" justifyContent="center" alignItems="center" paddingTop='10%' paddingBottom='100%'  >
-            <Box  bg='#9BCBE3' display="flex" w='500px' h='350px' justifyContent="center" alignItems="center" >
+            <Box  borderRadius="lg" bg='#9BCBE3' display="flex" w='500px' h='350px' justifyContent="center" alignItems="center" >
             <Stack spacing={3} w="25%" align = 'center'>
             <b >Register</b>
             <Input placeholder='Create Username' size='md' w='300px' bg='white' onChange={handleUsername}/>
             <Input placeholder='Create Password' size='md' w='300px' bg='white' onChange={handlePassword}/>
-            <Button w="50%" color='#FFFFFF' bg="#216583" onClick={onSubmit}>Login</Button>
+            <a href="http://localhost:3001/login">
+            <Button w="100%" color='#FFFFFF' bg="#216583" onClick={onSubmit}>Login</Button>
+            </a>
             </Stack>
             </Box>
             </Box>
