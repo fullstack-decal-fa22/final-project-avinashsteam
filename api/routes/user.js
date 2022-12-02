@@ -14,13 +14,14 @@ const User = require("../models/User");
  */
 
 router.post(
-  "/signup",
+  "/register",
   [
-    check("username", "Please Enter a Valid Username").not().isEmpty(),
-    check("email", "Please enter a valid email").isEmail(),
-    check("password", "Please enter a valid password").isLength({
+    check("username", "Please Enter a Valid Username").isLength({
       min: 6,
     }),
+    check("password", "Please enter a valid password").isLength({
+      min: 6,
+    })
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -30,10 +31,10 @@ router.post(
       });
     }
 
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
     try {
       let user = await User.findOne({
-        email,
+        username,
       });
       if (user) {
         return res.status(400).json({
@@ -43,7 +44,6 @@ router.post(
 
       user = new User({
         username,
-        email,
         password,
       });
 
@@ -83,7 +83,7 @@ module.exports = router;
 router.post(
     "/login",
     [
-      check("email", "Please enter a valid email").isEmail(),
+      check("username", "Please enter a valid username").isLength(),
       check("password", "Please enter a valid password").isLength({
         min: 6,
       }),
@@ -97,10 +97,10 @@ router.post(
         });
       }
   
-      const { email, password } = req.body;
+      const { username, password } = req.body;
       try {
         let user = await User.findOne({
-          email: email,
+          username: username,
         });
         if (!user)
           return res.status(400).json({

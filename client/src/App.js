@@ -5,9 +5,10 @@ import React, { useState, useEffect } from "react";
 import Sather from "./Sather";
 import Header from "./Header";
 import Login from "./Login";
+import Posts from "./Posts"
 import Register from "./Register";
 import { ChakraProvider } from "@chakra-ui/react";
-import {Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   const [expressCheck, setExpressCheck] = useState("");
@@ -28,6 +29,7 @@ function App() {
       <Route path='/' element={<Sather/>}></Route>
       <Route path="/login" element={<Login/>} />
       <Route path="/register" element={<Register/>} /> 
+      <Route path="/posts" element={<Posts/>} />
     </Routes>
     </ChakraProvider>
   );
